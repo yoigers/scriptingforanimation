@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class playercontroller : MonoBehaviour
 {
-    public float speed = 20.0f;
+    public float speed = 25.0f;
+    public float turnSpeed = 100.0f;
     public float hInput;
     public float vInput;
 
@@ -12,7 +13,7 @@ public class playercontroller : MonoBehaviour
     public float yRange = 6.73f;
 
     public GameObject projectile;
-    public Vector3 offset = new Vector3(0,1,0);
+    public Transform launcher;
 
 
     //public float health
@@ -23,7 +24,7 @@ public class playercontroller : MonoBehaviour
        hInput = Input.GetAxis("Horizontal");
        vInput = Input.GetAxis("Vertical");
 
-       transform.Translate(Vector3.right * speed * hInput * Time.deltaTime);
+       transform.Rotate(Vector3.back, turnSpeed * hInput * Time.deltaTime);
        transform.Translate(Vector3.up * speed * vInput * Time.deltaTime);
     // Create a wall on the -x side
        if(transform.position.x < -xRange)
@@ -48,7 +49,7 @@ public class playercontroller : MonoBehaviour
 
        if(Input.GetKeyDown(KeyCode.Space))
        {
-           Instantiate(projectile, transform.position + offset, projectile.transform.rotation);
+           Instantiate(projectile, launcher.transform.position, projectile.transform.rotation);
        }
     }
 }

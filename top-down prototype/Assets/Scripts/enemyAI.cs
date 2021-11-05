@@ -15,10 +15,11 @@ public class enemyAI : MonoBehaviour
 
 
 
-
     void OnTriggerEnter2D(Collider2D collider)
     {
-        Destroy(gameObject);
+        // Destroy enemy if the collider hitting the trigger has the tag "projectile"
+        if(collider.CompareTag("Projectile"))
+            Destroy(gameObject);
     }
     
 }
