@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class falldeathrespawn : MonoBehaviour
+public class falldeath : MonoBehaviour
 {
     public float topBound = 11.33f;
-
+   
     // Update is called once per frame
     void Update()
     {
@@ -14,5 +14,6 @@ public class falldeathrespawn : MonoBehaviour
            Destroy(gameObject);
            print("You fell into a very deep crater.");
        } 
+      
     }
 }
