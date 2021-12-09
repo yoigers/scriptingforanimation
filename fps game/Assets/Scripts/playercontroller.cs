@@ -45,15 +45,17 @@ public class playercontroller : MonoBehaviour
                 weapon.Shoot();
             }
         }
+
+        if(Input.GetKeyDown("space"))
+        {
+            Jump();
+        }
     }
 
 
     void FixedUpdate()
     {
-        if(Input.GetKeyDown("space"))
-        {
-            Jump();
-        }
+        
     }
 
     // Move around, move where camera goes
@@ -63,7 +65,10 @@ public class playercontroller : MonoBehaviour
         float z = Input.GetAxis("Vertical") * moveSpeed;
 
         // rb.velocity = new Vector3(x, rb.velocity.y, z); --this is old code
+        // Move direction relative to the camera
         Vector3 dir = transform.right * x + transform.forward * z;
+
+        dir.y = rb.velocity.y;
         rb.velocity = dir;
     }
 
@@ -83,6 +88,7 @@ public class playercontroller : MonoBehaviour
     {
         Ray ray = new Ray(transform.position, Vector3.down);
 
+        // Add force to jump
         if(Physics.Raycast(ray, 1.1f))
         {
             rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
