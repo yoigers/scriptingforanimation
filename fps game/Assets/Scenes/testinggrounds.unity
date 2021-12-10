@@ -141,7 +141,7 @@ GameObject:
   - component: {fileID: 300084670}
   m_Layer: 0
   m_Name: badguy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -154,7 +154,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 300084661}
   m_LocalRotation: {x: -0, y: 0.7257744, z: -0, w: 0.6879328}
-  m_LocalPosition: {x: -6.31, y: 1.17, z: 5.16}
+  m_LocalPosition: {x: -6.31, y: 1.17, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1168354876}
@@ -290,7 +290,7 @@ MonoBehaviour:
   scoreToGive: 100
   moveSpeed: 3
   attackRange: 10
-  yPathOffset: 0.8
+  yPathOffset: 0.5
 --- !u!1 &443521102
 GameObject:
   m_ObjectHideFlags: 0
@@ -493,13 +493,13 @@ GameObject:
   - component: {fileID: 650323322}
   - component: {fileID: 650323321}
   - component: {fileID: 650323320}
-  - component: {fileID: 650323324}
   - component: {fileID: 650323325}
+  - component: {fileID: 650323324}
   - component: {fileID: 650323326}
   - component: {fileID: 650323327}
   m_Layer: 0
   m_Name: playerguy
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -574,14 +574,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 650323319}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.17, z: 0}
+  m_LocalRotation: {x: -0, y: -0.014453251, z: -0, w: 0.9998956}
+  m_LocalPosition: {x: -3.19, y: 1.17, z: -5.71}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 963194228}
   m_Father: {fileID: 1187891653}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -1.656, z: 0}
 --- !u!114 &650323324
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -596,6 +596,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   jumpForce: 3
+  curHp: 10
+  maxHp: 10
   lookSensitivity: 3
   maxLookX: 34
   minLookX: -41
@@ -633,7 +635,7 @@ MonoBehaviour:
   maxAmmo: 10
   infiniteAmmo: 0
   bulletSpeed: 52
-  shootRate: 3
+  shootRate: 0.25
 --- !u!114 &650323327
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -944,7 +946,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1128827635}
   m_LocalRotation: {x: 0.71155065, y: 0.000000059604638, z: 0.00000016205011, w: 0.7026349}
-  m_LocalPosition: {x: -0, y: -1.11, z: 0}
+  m_LocalPosition: {x: 0, y: -1.34, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1168354876}
@@ -1223,7 +1225,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1666980567}
   m_LocalRotation: {x: 0.71155065, y: 0.000000059604638, z: 0.00000016205011, w: 0.7026349}
-  m_LocalPosition: {x: -0, y: -1.11, z: 0}
+  m_LocalPosition: {x: 0, y: -1.38, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2030862741}
@@ -1577,14 +1579,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2030862740}
-  m_LocalRotation: {x: -0.49185306, y: -0.4594504, z: 0.50486, w: 0.540465}
-  m_LocalPosition: {x: -0.648, y: -0.24800003, z: 0.244}
+  m_LocalRotation: {x: -0.54153144, y: -0.51299334, z: 0.45116174, w: 0.4899333}
+  m_LocalPosition: {x: -0.61, y: -0.25, z: 0.24}
   m_LocalScale: {x: 0.33052486, y: 0.4591345, z: 0.31913155}
   m_Children:
   - {fileID: 1666980568}
   m_Father: {fileID: 963194228}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -3.884, y: -84.595, z: 89.633}
+  m_LocalEulerAnglesHint: {x: -3.884, y: -96.494, z: 89.633}
 --- !u!136 &2030862742
 CapsuleCollider:
   m_ObjectHideFlags: 0

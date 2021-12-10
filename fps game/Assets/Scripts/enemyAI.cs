@@ -57,32 +57,49 @@ public class enemyAI : MonoBehaviour
         {
             path.RemoveAt(0);
         }
+    }
 
-        // Update is called once every frame
-        void Update()
+    // Applies damage to enemy
+    public void TakeDamage(int damage)
+    {
+        curHp -= damage;
+
+        if(curHp <= 0)
         {
-            // Look at the target (player)
-            Vector3 dir = (target.transform.position - transform.position).normalized;
-            float angle = Mathf.Atan2(dir.x, dir.z) * Mathf.Rad2Deg;
-            transform.eulerAngles = Vector3.up * angle;
+            Die();
+        }
+    }
 
-            // Calculate the distance between the enemy and the player
-            float dist = Vector3.Distance(transform.position, target.transform.position);
+
+    void Die()
+    {
+        Destroy(gameObject);
+    }
+
+    // Update is called once every frame
+    void Update()
+    {
+        // Look at the target (player)
+        Vector3 dir = (target.transform.position - transform.position).normalized;
+        float angle = Mathf.Atan2(dir.x, dir.z) * Mathf.Rad2Deg;
+        transform.eulerAngles = Vector3.up * angle;
+
+        // Calculate the distance between the enemy and the player
+        float dist = Vector3.Distance(transform.position, target.transform.position);
             
-            // If within attackRange, shoot at target (player)
-            if(dist <= attackRange)
+        // If within attackRange, shoot at target (player)
+        if(dist <= attackRange)
+        {
+            if(weapon.CanShoot())
             {
-                if(weapon.CanShoot())
-                {
-                    weapon.Shoot();
-                }
+                weapon.Shoot();
             }
+        }
             
-            // If enemy is too far away, chase targer (player)
-            else
-            {
-                ChaseTarget();
-            }
+        // If enemy is too far away, chase targer (player)
+        else
+        {
+            ChaseTarget();
         }
     }
 }
