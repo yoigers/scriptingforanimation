@@ -8,6 +8,8 @@ public class bullet : MonoBehaviour
     public float lifetime;
     private float shootTime;
 
+    public GameObject hitParticle;
+
 
     void OnEnable()
     {
@@ -28,6 +30,10 @@ public class bullet : MonoBehaviour
 
         // Disable projectile for future use
         gameObject.SetActive(false);
+
+        // Create the hit particle
+        GameObject obj = Instantiate(hitParticle, transform.position, Quaternion.identity);
+        Destroy(obj, 1f);
     }
 
     // Start is called before the first frame update
