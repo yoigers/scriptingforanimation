@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class weapon : MonoBehaviour
 {
-    public GameObject bulletPrefab;
+    //public GameObject bulletPrefab; --this is old code replaced with ObjectPool
+    public objectpool bulletPool;
     public Transform muzzle;
 
     public int curAmmo;
@@ -50,8 +51,14 @@ public class weapon : MonoBehaviour
         // Cooldown
         lastShootTime = Time.time;
         curAmmo--;
+        
         // Creating an instance of the bullet prefab at muzzle's position and rotation
-        GameObject bullet = Instantiate(bulletPrefab, muzzle.position, muzzle.rotation);
+        //GameObject bullet = Instantiate(bulletPrefab, muzzle.position, muzzle.rotation); --this is old code, replaced by bulletPool below
+        GameObject bullet = bulletPool.GetObject();
+
+        bullet.transform.position = muzzle.position;
+        bullet.transform.rotation = muzzle.rotation;
+
         // Add velocity to projectile
         bullet.GetComponent<Rigidbody>().velocity = muzzle.forward * bulletSpeed;
     }
