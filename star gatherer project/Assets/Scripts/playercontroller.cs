@@ -10,8 +10,39 @@ public class playercontroller : MonoBehaviour
 
     public float xRange = 17.5f;
 
+    [Header("Stats")]
+    public int curHp;
+    public int maxHp;
+
+    public int curStarcount;
+    public int maxStarcount;
+
     // Start is called before the first frame update
     void Start()
+    {
+        
+    }
+
+
+    // Player takes damage
+    public void TakeDamage(int damage)
+    {
+        curHp -= damage;
+
+        if(curHp <= 0)
+        {
+            Die();
+        }
+    }
+
+
+    public void GiveScore(int amountToGive)
+    {
+        curStarcount = Mathf.Clamp(curStarcount + amountToGive, 0, maxStarcount);
+    }
+
+    // If player hits <0 HP they die
+    void Die()
     {
         
     }
