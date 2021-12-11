@@ -7,6 +7,8 @@ public class pickup : MonoBehaviour
     public PickupType type;
     public int value;
 
+    public GameObject shineParticle;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +22,7 @@ public class pickup : MonoBehaviour
     }
 
     // Stars picked up
-    void OnTriggerEnter(Collider other)
+    void OnTriggerEnter2D(Collider2D other)
     {
         if(other.CompareTag("Player"))
         {
@@ -31,6 +33,10 @@ public class pickup : MonoBehaviour
                 case PickupType.Star:
                 player.GiveScore(value);
                 break;
+
+                default:
+                print("Type not accepted");
+                break;
             }
 
             Destroy(gameObject);
@@ -40,6 +46,6 @@ public class pickup : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }

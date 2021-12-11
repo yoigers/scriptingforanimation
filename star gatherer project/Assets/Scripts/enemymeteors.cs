@@ -5,7 +5,7 @@ using UnityEngine;
 public class enemymeteors : MonoBehaviour
 {
     public int damage;
-    public float fallTime;
+    public float shootTime;
     
     public GameObject fallParticle;
 
@@ -14,30 +14,27 @@ public class enemymeteors : MonoBehaviour
 
     void OnEnable()
     {
-        fallTime = Time.time;
+        shootTime = Time.time;
     }
 
 
-    void OnTriggerEnter(Collider other)
+    void OnTriggerEnter2D(Collider2D other)
     {
         if(other.CompareTag("Player"))
         {
             other.GetComponent<playercontroller>().TakeDamage(damage);
         }
 
-        Destroy(gameObject);
+        gameObject.SetActive(false);
+
+        GameObject obj = Instantiate(fallParticle, transform.position, Quaternion.identity);
+        Destroy(obj, 1f);
     }
 
     // Start is called before the first frame update
     void Start()
     {
         target = FindObjectOfType<playercontroller>().gameObject;
-    }
-
-
-    void Die()
-    {
-        Destroy(gameObject);
     }
 
     // Update is called once per frame

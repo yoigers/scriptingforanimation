@@ -97,3 +97,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 0
   value: 5
+  shineParticle: {fileID: 294165599170920179, guid: 30de8aa0fc1e8fb43afd36cd02b3593a, type: 3}
