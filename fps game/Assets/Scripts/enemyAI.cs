@@ -73,6 +73,7 @@ public class enemyAI : MonoBehaviour
 
     void Die()
     {
+        gamemanager.instance.AddScore(scoreToGive);
         Destroy(gameObject);
     }
 

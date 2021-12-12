@@ -83,7 +83,7 @@ public class gameUI : MonoBehaviour
 
     public void OnResumeButton()
     {
-
+        gamemanager.instance.TogglePauseGame();
     }
 
     // Update is called once per frame
