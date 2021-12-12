@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class alienweapon : MonoBehaviour
 {
-    public objectpool meteorPool;
+    public GameObject meteor;
     public Transform ship;
 
-    public bool infiniteAmmo;
+    public bool infiniteMeteor;
 
     public float meteorSpeed, shootRate;
 
@@ -17,8 +17,6 @@ public class alienweapon : MonoBehaviour
 
     void Awake()
     {
-        Cursor.lockState = CursorLockMode.Locked;
-
         if(GetComponent<playercontroller>())
         {
             isPlayer = true;
@@ -30,7 +28,7 @@ public class alienweapon : MonoBehaviour
     {
         if(Time.time - lastShootTime >= shootRate)
         {
-            if(infiniteAmmo == true)
+            if(infiniteMeteor == true)
             {
                 return true;
             }
@@ -43,8 +41,6 @@ public class alienweapon : MonoBehaviour
     public void Shoot()
     {
         lastShootTime = Time.time;
-
-        GameObject meteor = meteorPool.GetObject();
 
         meteor.transform.position = ship.position;
         meteor.transform.rotation = ship.rotation;

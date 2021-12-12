@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
+using System.Linq;
 
 public class enemyAI : MonoBehaviour
 {
@@ -11,10 +13,14 @@ public class enemyAI : MonoBehaviour
 
     private Vector2 movement;
 
+    private alienweapon ship;
+
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+
+        ship = GetComponent<alienweapon>();
     }
 
 
