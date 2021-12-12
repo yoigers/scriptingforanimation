@@ -21,7 +21,6 @@ public class falldeath : MonoBehaviour
        {
            print("You fell into a very deep crater.");
            dieSound.Play();
-       } 
-      
+       }
     }
 }

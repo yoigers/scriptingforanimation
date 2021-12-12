@@ -45,7 +45,7 @@ public class alienweapon : MonoBehaviour
         meteor.transform.position = ship.position;
         meteor.transform.rotation = ship.rotation;
 
-        meteor.GetComponent<Rigidbody2D>().velocity = ship.forward * meteorSpeed;
+        meteor.GetComponent<Rigidbody2D>().velocity = ship.right * meteorSpeed;
     }
 
     // Start is called before the first frame update

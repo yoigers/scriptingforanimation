@@ -2,12 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class enemymeteors : MonoBehaviour
+public class meteorshots : MonoBehaviour
 {
     public int damage;
+    public float lifetime;
     public float shootTime;
     
-    public GameObject fallParticle;
+    public GameObject hitParticle;
 
     private GameObject target;
     private GameObject meteor;
@@ -27,7 +28,8 @@ public class enemymeteors : MonoBehaviour
 
         gameObject.SetActive(false);
 
-        GameObject obj = Instantiate(fallParticle, transform.position, Quaternion.identity);
+        // Hit particle
+        GameObject obj = Instantiate(hitParticle, transform.position, Quaternion.identity);
         Destroy(obj, 1f);
     }
 
@@ -40,6 +42,9 @@ public class enemymeteors : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(Time.time - shootTime >= lifetime)
+        {
+            gameObject.SetActive(false);
+        }
     }
 }

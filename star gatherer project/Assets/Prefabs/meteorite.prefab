@@ -100,7 +100,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.55
 --- !u!50 &-7647001156123618310
 Rigidbody2D:
   serializedVersion: 4
@@ -131,9 +131,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1222608012609339718}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01fcd5ef25af128489bce7b05551c874, type: 3}
+  m_Script: {fileID: 11500000, guid: 0eabd522283a0a54c8223852bc453cfb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 2
+  lifetime: 3
   shootTime: 0.5
-  fallParticle: {fileID: 5880045774191584893, guid: 4cf86bab7769f9643b836738a2cb9ef9, type: 3}
+  hitParticle: {fileID: 5880045774191584893, guid: 4cf86bab7769f9643b836738a2cb9ef9, type: 3}

@@ -25,6 +25,7 @@ public class gameUI : MonoBehaviour
 
     void Awake()
     {
+        // Instance is set to this
         instance = this;
     }
 
@@ -63,20 +64,20 @@ public class gameUI : MonoBehaviour
 
     public void OnMenuButton()
     {
-        SceneManager.LoadScene("Menu");
+        SceneManager.LoadScene("menu");
     }
 
 
 
     public void OnRestartButton()
     {
-        SceneManager.LoadScene("Game");
+        SceneManager.LoadScene("moon-ish scene");
     }
 
 
     public void OnResumeButton()
     {
-
+        gamemanager.instance.TogglePauseGame();
     }
 
     // Update is called once per frame

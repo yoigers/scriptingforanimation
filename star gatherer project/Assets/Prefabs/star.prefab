@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7269151589385517981}
   - component: {fileID: 8207933310311530231}
   - component: {fileID: 8685491449628034026}
+  - component: {fileID: 687447950678782193}
   m_Layer: 0
   m_Name: star
   m_TagString: Untagged
@@ -98,3 +99,19 @@ MonoBehaviour:
   type: 0
   value: 5
   shineParticle: {fileID: 294165599170920179, guid: 30de8aa0fc1e8fb43afd36cd02b3593a, type: 3}
+--- !u!58 &687447950678782193
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1375765491199653124}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
