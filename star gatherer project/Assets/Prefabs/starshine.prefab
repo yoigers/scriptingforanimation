@@ -10,7 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 3260516052233310423}
   - component: {fileID: 4132766370898749344}
+  - component: {fileID: 232753241265289763}
   - component: {fileID: 7279743509351655865}
+  - component: {fileID: -5674504973440354733}
   m_Layer: 0
   m_Name: starshine
   m_TagString: Untagged
@@ -4738,6 +4740,22 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!58 &232753241265289763
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 294165599170920179}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.25
 --- !u!199 &7279743509351655865
 ParticleSystemRenderer:
   serializedVersion: 6
@@ -4804,3 +4822,18 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!114 &-5674504973440354733
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 294165599170920179}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd4e5303fb0eb174f999d00bea23bf3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 0
+  value: 0
+  shineParticle: {fileID: 0}
