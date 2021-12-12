@@ -35,17 +35,17 @@ public class gameUI : MonoBehaviour
         
     }
 
-
+    // Health bar increases or decreases with HP
     public void UpdateHealthBar(int curHp, int maxHp)
     {
         healthBarFill.fillAmount = (float)curHp / (float)maxHp;
     }
 
+    // Star counter should tell how many stars you got
     public void UpdateStarText(int stars)
     {
         starText.text = "Star x " + stars;
     }
-
 
     public void TogglePauseMenu(bool paused)
     {
